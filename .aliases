@@ -1,0 +1,22 @@
+alias vi="nvim"
+alias cls="clear"
+alias py="python3"
+
+alias zmod="vi ~/.zshrc && source ~/.zshrc"
+alias amod="vi ~/.aliases && source ~/.aliases"
+alias kmod="vi ~/.keys && source ~/.keys"
+alias vmod="vi ~/.config/nvim/init.vim"
+alias tmod="vi ~/.tmux.conf && tmux source-file ~/.tmux.conf"
+
+alias ez="exec zsh"
+
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gits="git status"
+
+alias ll='ls -lah'
+
+alias k='kubectl'
+alias d='docker'
+alias kci='kubectl cluster-info'
