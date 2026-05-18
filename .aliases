@@ -1,0 +1,75 @@
+alias t="tmux attach -t 0"
+alias b="bun"
+alias s="git status"
+alias g="git"
+
+alias nbr="bun run nautobot:refresh"
+
+alias vi="nvim"
+alias lg="lazygit"
+alias cls="clear"
+alias py="python3"
+alias td="tmux detach"
+
+alias pbcopy='wl-copy'
+
+alias sc="suitecloud"
+alias scpd="suitecloud project:deploy"
+alias scas="suitecloud account:setup"
+
+alias top="bpytop"
+alias nslookup="drill"
+
+alias zmod="vi ~/.zshrc && source ~/.zshrc"
+alias amod="vi ~/.aliases && source ~/.aliases"
+alias vmod="vi ~/.config/nvim/init.vim"
+
+alias ez="exec zsh"
+
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias ch="git checkout"
+alias pull="git pull"
+
+alias bb="bun run build"
+
+nsp() {
+  local base_path="/SuiteScripts"
+  local args=()
+  for f in "$@"; do
+    args+=("$base_path/$f")
+  done
+  sc file:upload --paths "${args[@]}"
+}
+
+alias k='kubectl'
+alias d='docker'
+alias kci='kubectl cluster-info'
+alias ki='kubectl --insecure-skip-tls-verify'
+
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias lsa='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias ll='ls -la'
+alias l='ll'
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
